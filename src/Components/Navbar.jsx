@@ -5,6 +5,12 @@ import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [Menu, setMenu] = useState("home")
+
+  function toogleNav(){
+    const blockNav=document.getElementById("navbar-default");
+  
+    blockNav.classList.toggle("hidden")
+  }
   return (
     <div>
       <nav class="bg-[#34353A] fixed w-full z-10 top-0 p-4">
@@ -19,6 +25,7 @@ const Navbar = () => {
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
             aria-expanded="false"
+            onClick={()=>toogleNav()}
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -27,6 +34,7 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 17 14"
+              
             >
               <path
                 stroke="currentColor"
@@ -43,7 +51,7 @@ const Navbar = () => {
              
                   <Link
                   to="hero"
-                  class="block py-2 px-3  hover:text-yellow-300 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500 cursor-pointer"
+                  class="block py-2 px-3   hover:text-yellow-300 rounded md:bg-transparent md:p-0  cursor-pointer"
                   aria-current="page"
                   offset={-50}
                   smooth={true}

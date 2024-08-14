@@ -5,7 +5,7 @@ import Hero from './Components/Hero'
 import About from './Components/About'
 import Mywork from './Components/Mywork'
 import Contact from './Components/Contact'
-import Sticky from './Components/Sticky'
+
 const App = () => {
   return (
     <div className=''>
@@ -14,7 +14,7 @@ const App = () => {
       <About></About>
       <Mywork></Mywork>
       <Contact></Contact>
-      <Sticky></Sticky>
+     
  
 
     </div>

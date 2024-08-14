@@ -12,6 +12,7 @@ import ExpressJs from "../assets/Expressjs.webp";
 
 import Cards from "./Cards";
 import { Element } from "react-scroll";
+import { Button } from "@material-tailwind/react";
 
 const About = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ const About = () => {
             <Cards img={ExpressJs} text={"Express"}></Cards>
           </div>
         </div>
+       
       </div>
     </Element>
   );

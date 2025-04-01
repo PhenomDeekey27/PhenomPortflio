@@ -1,6 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-raleway: "Raleway", sans-serif;
+  --font-mont:"Montserrat", sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 body{
   margin: 0;
@@ -14,3 +37,19 @@ body{
   color: black;
   
 }
+
+#back{
+  background: rgb(215,215,215);
+background: linear-gradient(115deg, rgba(215,215,215,1) 0%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
+}
+
+.text-overlay {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+#projectBack{
+  background-image: linear-gradient(to right top, #232323, #614359, #b7606b, #f6915a, #ffdd44);
+}
+
+

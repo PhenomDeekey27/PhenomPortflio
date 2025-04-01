@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import BackgroundImg from "../assets/Black&White.png";
 
 
 const Navbar = () => {
@@ -13,16 +14,18 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav class="bg-[#34353A] fixed w-full z-10 top-0 p-4">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-          <span class="self-center sm:text-3xl font-bold whitespace-nowrap dark:text-white">
+      <nav className="fixed text-black w-screen z-10 top-0 p-4 bg-cover bg-fixed bg-center bg-no-repeat" style={{
+            backgroundImage: `url(${BackgroundImg})`,
+          }}>
+        <div class="max-w-(--breakpoint-xl) flex flex-wrap items-center justify-between mx-auto p-2">
+          <span class="self-center sm:text-3xl font-bold whitespace-nowrap text-blue-800 ">
             Kasthuri Rangan
           </span>
 
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
             aria-expanded="false"
             onClick={()=>toogleNav()}
@@ -51,7 +54,7 @@ const Navbar = () => {
              
                   <Link
                   to="hero"
-                  class="block py-2 px-3   hover:text-yellow-300 rounded md:bg-transparent md:p-0  cursor-pointer"
+                  class="block py-2 px-3   hover:text-yellow-300 rounded-sm md:bg-transparent md:p-0  cursor-pointer"
                   aria-current="page"
                   offset={-50}
                   smooth={true}
@@ -66,7 +69,7 @@ const Navbar = () => {
               <li className={`${Menu=="about" ? "text-red-600" : "text-white"}`}>
                 <Link
                   to="About"
-                  class="block py-2 px-3  hover:text-yellow-300  rounded  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
+                  class="block py-2 px-3  hover:text-yellow-300  rounded-sm  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
                   offset={-90} onClick={()=>setMenu("about")}
                   smooth={true}
                 >
@@ -79,7 +82,7 @@ const Navbar = () => {
                 <Link
                   to="Contact"
                   smooth={true}
-                  class="block py-2 px-3   hover:text-yellow-300 rounded  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
+                  class="block py-2 px-3   hover:text-yellow-300 rounded-sm  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
                   offset={-100} onClick={()=>setMenu("contact")}
                 >
                   Contact
@@ -88,7 +91,7 @@ const Navbar = () => {
               <li className={`${Menu=="portfolio" ? "text-red-600" : "text-white"}`}>
                 <Link
                   to="Portfolio"
-                  class="block py-2 px-3 hover:text-yellow-300   rounded  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
+                  class="block py-2 px-3 hover:text-yellow-300   rounded-sm  md:hover:bg-transparent md:border-0  md:p-0 cursor-pointer"
                   offset={-75}
                   onClick={()=>setMenu("portfolio")}
                   smooth={true}
